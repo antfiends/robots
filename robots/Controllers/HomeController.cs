@@ -22,9 +22,9 @@ namespace robots.Controllers
         [AuthorizeForScopes(ScopeKeySection = "MicrosoftGraph:Scopes")]
         public async Task<IActionResult> Index()
         {
-            var user = await _graphServiceClient.Me.Request().GetAsync();
-            ViewData["GraphApiResult"] = user.DisplayName;
-            ViewData["GraphApiUserRoles"] = user.UserPrincipalName;
+            //var user = await _graphServiceClient.Me.Request().GetAsync();
+            ViewData["GraphApiResult"] = "me"; //user.DisplayName;
+            ViewData["GraphApiUserRoles"] = "myself";//user.UserPrincipalName;
             return View();
         }
 
